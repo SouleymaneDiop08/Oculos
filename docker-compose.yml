@@ -2,7 +2,7 @@
 
 services:
   opensearch:
-    image: ghcr.io/idaholab/malcolm/opensearch:26.02.0
+    image: suleymane08/oculos:opensearch
     # Technically the "hedgehog" profile doesn't have OpenSearch, but in that case
     #   OPENSEARCH_PRIMARY will be set to remote, which means the container will
     #   start but not actually run OpenSearch. It's included in both profiles to
@@ -76,7 +76,7 @@ services:
       retries: 3
       start_period: 180s
   dashboards-helper:
-    image: ghcr.io/idaholab/malcolm/dashboards-helper:26.02.0
+    image: suleymane08/oculos:dashboards-helper
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -126,7 +126,7 @@ services:
       retries: 3
       start_period: 30s
   dashboards:
-    image: ghcr.io/idaholab/malcolm/dashboards:26.02.0
+    image: suleymane08/oculos:dashboards
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -167,7 +167,7 @@ services:
       retries: 3
       start_period: 210s
   logstash:
-    image: ghcr.io/idaholab/malcolm/logstash-oss:26.02.0
+    image: suleymane08/oculos:logstash-oss
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -257,7 +257,7 @@ services:
     ports:
     - 0.0.0.0:5044:5044/tcp
   filebeat:
-    image: ghcr.io/idaholab/malcolm/filebeat-oss:26.02.0
+    image: suleymane08/oculos:filebeat-oss
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -344,7 +344,7 @@ services:
     ports:
     - 0.0.0.0:5045:5045/tcp
   arkime:
-    image: ghcr.io/idaholab/malcolm/arkime:26.02.0
+    image: suleymane08/oculos:arkime
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -412,7 +412,7 @@ services:
       retries: 3
       start_period: 210s
   arkime-live:
-    image: ghcr.io/idaholab/malcolm/arkime:26.02.0
+    image: suleymane08/oculos:arkime
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -486,7 +486,7 @@ services:
       retries: 3
       start_period: 210s
   zeek:
-    image: ghcr.io/idaholab/malcolm/zeek:26.02.0
+    image: suleymane08/oculos:zeek
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -548,7 +548,7 @@ services:
       retries: 3
       start_period: 60s
   zeek-live:
-    image: ghcr.io/idaholab/malcolm/zeek:26.02.0
+    image: suleymane08/oculos:zeek
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -608,7 +608,7 @@ services:
       retries: 3
       start_period: 60s
   suricata:
-    image: ghcr.io/idaholab/malcolm/suricata:26.02.0
+    image: suleymane08/oculos:suricata
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -667,7 +667,7 @@ services:
       retries: 3
       start_period: 120s
   suricata-live:
-    image: ghcr.io/idaholab/malcolm/suricata:26.02.0
+    image: suleymane08/oculos:suricata
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -730,7 +730,7 @@ services:
       retries: 3
       start_period: 120s
   filescan:
-    image: ghcr.io/idaholab/malcolm/filescan:26.02.0
+    image: suleymane08/oculos:filescan
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -785,7 +785,7 @@ services:
       retries: 3
       start_period: 60s
   pcap-capture:
-    image: ghcr.io/idaholab/malcolm/pcap-capture:26.02.0
+    image: suleymane08/oculos:pcap-capture
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -835,7 +835,7 @@ services:
       retries: 3
       start_period: 60s
   pcap-monitor:
-    image: ghcr.io/idaholab/malcolm/pcap-monitor:26.02.0
+    image: suleymane08/oculos:pcap-monitor
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -886,7 +886,7 @@ services:
       retries: 3
       start_period: 90s
   upload:
-    image: ghcr.io/idaholab/malcolm/file-upload:26.02.0
+    image: suleymane08/oculos:file-upload
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -924,7 +924,7 @@ services:
       retries: 3
       start_period: 60s
   htadmin:
-    image: ghcr.io/idaholab/malcolm/htadmin:26.02.0
+    image: suleymane08/oculos:htadmin
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -967,7 +967,7 @@ services:
       retries: 3
       start_period: 60s
   freq:
-    image: ghcr.io/idaholab/malcolm/freq:26.02.0
+    image: suleymane08/oculos:freq
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -999,7 +999,7 @@ services:
       retries: 3
       start_period: 60s
   netbox:
-    image: ghcr.io/idaholab/malcolm/netbox:26.02.0
+    image: suleymane08/oculos:netbox
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -1063,7 +1063,7 @@ services:
       retries: 3
       start_period: 120s
   postgres:
-    image: ghcr.io/idaholab/malcolm/postgresql:26.02.0
+    image: suleymane08/oculos:postgresql
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -1101,7 +1101,7 @@ services:
       retries: 3
       start_period: 45s
   redis:
-    image: ghcr.io/idaholab/malcolm/redis:26.02.0
+    image: suleymane08/oculos:redis
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -1142,7 +1142,7 @@ services:
       retries: 3
       start_period: 45s
   redis-cache:
-    image: ghcr.io/idaholab/malcolm/redis:26.02.0
+    image: suleymane08/oculos:redis
     profiles: ["malcolm", "hedgehog"]
     logging:
       driver: local
@@ -1178,7 +1178,7 @@ services:
       retries: 3
       start_period: 45s
   api:
-    image: ghcr.io/idaholab/malcolm/api:26.02.0
+    image: suleymane08/oculos:api
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -1224,7 +1224,7 @@ services:
       retries: 3
       start_period: 60s
   keycloak:
-    image: ghcr.io/idaholab/malcolm/keycloak:26.02.0
+    image: suleymane08/oculos:keycloak
     profiles: ["malcolm"]
     logging:
       driver: local
@@ -1261,7 +1261,7 @@ services:
       retries: 3
       start_period: 45s
   nginx-proxy:
-    image: ghcr.io/idaholab/malcolm/nginx-proxy:26.02.0
+    image: suleymane08/oculos:nginx-proxy
     profiles: ["malcolm"]
     logging:
       driver: local
